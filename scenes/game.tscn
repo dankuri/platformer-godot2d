@@ -95,10 +95,10 @@ unique_name_in_owner = true
 script = ExtResource("1_gee14")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 1159.0
-offset_top = -90.0
-offset_right = 1226.0
-offset_bottom = -71.0
+offset_left = 1146.0
+offset_top = -91.0
+offset_right = 1213.0
+offset_bottom = -72.0
 theme_override_colors/font_color = Color(1, 0.823529, 0.2, 1)
 theme_override_fonts/font = ExtResource("9_0tnpc")
 theme_override_font_sizes/font_size = 8
@@ -118,7 +118,7 @@ tile_map_data = PackedByteArray("AADv//f/AAAAAAkAAADv//j/AAAAAAoAAADv//n/AAAAAAs
 tile_set = ExtResource("1_iywne")
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(-120, 32)
+position = Vector2(601, -248)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -167,6 +167,7 @@ libraries = {
 autoplay = "move_3"
 
 [node name="Coins" type="Node" parent="."]
+unique_name_in_owner = true
 
 [node name="Coin" parent="Coins" instance=ExtResource("4_lbhrr")]
 position = Vector2(-8, 8)
