@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://b8co1is61icy2"]
+[gd_scene load_steps=12 format=4 uid="uid://b8co1is61icy2"]
 
 [ext_resource type="PackedScene" uid="uid://iukdjtweak2d" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://4uclmvnmj5sr" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://b4fpwnpwmk65i" path="res://scenes/platform.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://cq1gt8y1315om" path="res://scenes/coin.tscn" id="4_lbhrr"]
 
 [sub_resource type="GDScript" id="GDScript_jyhfs"]
 script/source = "extends Node2D
@@ -259,3 +260,38 @@ position = Vector2(-120, 160)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World Border"]
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(-8, 8)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(8, 8)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(80, -16)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(168, -56)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(296, -8)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(392, -24)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(432, -8)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(448, -8)
+
+[node name="Coin11" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(464, -8)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(552, -56)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(648, -8)
