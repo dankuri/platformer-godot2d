@@ -223,3 +223,6 @@ shape = SubResource("CapsuleShape2D_1bvp3")
 
 [node name="DeathAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_qhqgy")
+
+[node name="JumpBufferTimer" type="Timer" parent="."]
+one_shot = true
