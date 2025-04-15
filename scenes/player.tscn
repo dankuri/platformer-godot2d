@@ -226,3 +226,6 @@ stream = ExtResource("3_qhqgy")
 
 [node name="JumpBufferTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+one_shot = true

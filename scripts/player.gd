@@ -4,11 +4,13 @@ const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
 @export var jump_buffer_dur := 0.1
+@export var coyote_dur := 0.15
 var is_dead := false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var death_audio: AudioStreamPlayer2D = $DeathAudio
 @onready var jumb_buffer_timer: Timer = $JumpBufferTimer
+@onready var coyote_timer: Timer = $CoyoteTimer
 
 
 func _physics_process(delta: float) -> void:
@@ -22,7 +24,10 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
-		if is_on_floor():
+		var coyote_jump := not coyote_timer.is_stopped()
+		if is_on_floor() or coyote_jump:
+			if coyote_jump:
+				print("coyote")
 			jump()
 		else:
 			jumb_buffer_timer.start(jump_buffer_dur)
@@ -54,13 +59,17 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+	var was_on_floor := is_on_floor()
 	move_and_slide()
+	if was_on_floor and !is_on_floor():
+		coyote_timer.start(coyote_dur)
 
 
 func jump() -> void:
 	velocity.y = JUMP_VELOCITY
-	jumb_buffer_timer.stop()
 	animated_sprite.play("jump")
+	jumb_buffer_timer.stop()
+	coyote_timer.stop()
 
 
 func on_killzone() -> void:
